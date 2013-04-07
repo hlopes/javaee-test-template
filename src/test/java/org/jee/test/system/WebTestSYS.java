@@ -1,6 +1,5 @@
 package org.jee.test.system;
 
-import static org.jboss.arquillian.graphene.Graphene.guardHttp;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
@@ -11,7 +10,7 @@ import java.net.URL;
 
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.drone.api.annotation.Drone;
-import org.jboss.arquillian.graphene.enricher.findby.FindBy;
+import org.jboss.arquillian.graphene.spi.annotations.Page;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.arquillian.junit.InSequence;
 import org.jboss.arquillian.test.api.ArquillianResource;
@@ -28,11 +27,11 @@ import org.jee.data.MemberListProducer;
 import org.jee.data.MemberRepository;
 import org.jee.model.Member;
 import org.jee.service.MemberRegistration;
+import org.jee.test.system.pages.HomePage;
 import org.jee.util.Resources;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 /**
  * Test class for Graphene 2 - Selenium 2 (WD)
@@ -43,20 +42,8 @@ import org.openqa.selenium.WebElement;
 public class WebTestSYS {
     private static final String WEBAPP_SRC = "src/main/webapp";
 
-    @FindBy(id = "reg:name")
-    private WebElement name;
-
-    @FindBy(id = "reg:email")
-    private WebElement email;
-
-    @FindBy(id = "reg:phoneNumber")
-    private WebElement phone;
-
-    @FindBy(id = "reg:register")
-    private WebElement register;
-
-    @FindBy(jquery = "ul.messages li.valid")
-    private WebElement validMessage;
+    @Page
+    private HomePage homePage;
 
     @Drone
     WebDriver driver;
@@ -90,12 +77,7 @@ public class WebTestSYS {
     @Test
     @InSequence(1)
     public void addMember(@ArquillianResource URL baseURL) {
-        name.sendKeys("test");
-        email.sendKeys("test@ap.pt");
-        phone.sendKeys("1234567891");
-        guardHttp(register).click();
-
-        assertEquals("Registered!", validMessage.getText().trim());
+        assertEquals("Registered!", homePage.addMember("test", "test@ap.pt", 1234567891));
     }
 
     private static void exportArchive(Archive<?> archive) throws IOException {
