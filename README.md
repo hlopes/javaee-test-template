@@ -5,4 +5,4 @@ Based on the JBoss Java EE Maven Archetype, this is a simple Test Template that 
 For more information, please visit:
 
 * [Wiki](https://github.com/hlopes/javaee-arquillian-jacoco/wiki)
-* [Getting Started] (https://github.com/hlopes/javaee-arquillian-jacoco/wiki)
+* [Getting Started] (https://github.com/hlopes/javaee-arquillian-jacoco/wiki/Getting-Started)
