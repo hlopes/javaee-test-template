@@ -7,6 +7,10 @@ For more information, please visit:
 * [Wiki](https://github.com/hlopes/javaee-test-template/wiki)
 * [Getting Started] (https://github.com/hlopes/javaee-test-template/wiki/Getting-Started)
 
-This project use:
+This project use the following test frameworks/tools:
 
-. fdfd
+* [JUnit](http://junit.org/)
+* [Arquillian](http://arquillian.org/)
+* [Arquillian Drone](https://docs.jboss.org/author/display/ARQ/Drone)
+* [Arquillian Graphene 2](https://docs.jboss.org/author/display/ARQGRA2/Home)
+* [JaCoCo](http://www.eclemma.org/jacoco/)
