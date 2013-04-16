@@ -6,3 +6,7 @@ For more information, please visit:
 
 * [Wiki](https://github.com/hlopes/javaee-test-template/wiki)
 * [Getting Started] (https://github.com/hlopes/javaee-test-template/wiki/Getting-Started)
+
+This project use:
+
+# fdfd
