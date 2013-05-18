@@ -30,7 +30,7 @@
         <property name="remoteAddress">http://localhost:4444/wd/hub/</property>
         <property name="javascriptEnabled">true</property>
         <!-- ChromeDriver only -->
-        <property name="chromeDriverBinary">C:\\Users\\Hugo\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe</property>
+        <property name="chromeDriverBinary">${chromeDriver}</property>
     </extension>
 
 </arquillian>
