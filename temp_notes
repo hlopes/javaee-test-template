@@ -1,0 +1,5 @@
+* [Thucydides](http://www.thucydides.info/)
+
+###ACCEPTANCE TDD
+_Run ATDD tests with Thucydides._
+> `mvn clean verify -Patdd-thucydides-managed`
