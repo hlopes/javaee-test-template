@@ -2,6 +2,8 @@
 
 Based on the JBoss Java EE Maven Archetype, this is a simple Test Template that provides a scaffold to develop **Unit**, **Integration** and **System** (Web) tests for a Java EE application.
 
+![Testing triangle]((username.github.com/repository/img/image.jpg) "Testing levels")
+
 For more information, please visit:
 
 * [Wiki](https://github.com/hlopes/javaee-test-template/wiki)
