@@ -20,17 +20,13 @@
         <!--</configuration> -->
     </container>
 
-    <extension qualifier="graphene">
-        <property name="browser">*chrome</property>
-        <property name="seleniumTimeoutAjax">5000</property>
-    </extension>
     <extension qualifier="webdriver">
-        <property name="browserCapabilities">chrome</property>
+        <property name="browserCapabilities">${browser}</property>
         <property name="remoteReusable">${remoteReusable}</property>
         <property name="remoteAddress">http://localhost:4444/wd/hub/</property>
         <property name="javascriptEnabled">true</property>
         <!-- ChromeDriver only -->
-        <property name="chromeDriverBinary">C:\\Users\\Hugo\\AppData\\Local\\Google\\Chrome\\Application\\chromedriver.exe</property>
+        <property name="chromeDriverBinary">${chromeBinary}</property>
     </extension>
 
 </arquillian>
