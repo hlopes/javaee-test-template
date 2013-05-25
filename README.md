@@ -1,6 +1,6 @@
 # Java EE Test Template
 
-Based on the JBoss Java EE Maven Archetype, this is a simple Test Template that provides a scaffold to develop **Unit**, **Integration** and **System** (Web) tests for a Java EE application.
+Based on the JBoss Java EE Maven Archetype, this is a simple Test Template that provides a scaffold to develop **Unit**, **Integration** and **System** (Web UI) tests for a Java EE application.
 
 ![Testing triangle](TestingTrianglePished.png)
 
