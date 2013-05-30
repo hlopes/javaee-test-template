@@ -43,13 +43,11 @@
         <version.objenesis>1.2</version.objenesis>
         <version.jboss.logging>3.1.1.GA</version.jboss.logging>
 
+        <!-- Test Code coverage -->
         <version.jacoco>0.6.0.201210061924</version.jacoco>
-        <jbossHome>${project.build.directory}/jboss-as-${version.jboss.maven.plugin}</jbossHome>
+        <version.cobertura>2.5.2</version.cobertura>
 
-        <!-- Thucydides -->
-        <thucydides.version>0.9.98</thucydides.version>
-        <thucydides.driver>chrome</thucydides.driver>
-        <thucydides.chrome.driver>/usr/bin/chromedriver</thucydides.chrome.driver>
+        <jbossHome>${project.build.directory}/jboss-as-${version.jboss.maven.plugin}</jbossHome>
     </properties>
 
     <dependencyManagement>
@@ -256,19 +254,6 @@
             <groupId>org.jacoco</groupId>
             <artifactId>org.jacoco.core</artifactId>
         </dependency>
-
-        <!-- ATDD Thucydides -->
-        <dependency>
-            <groupId>net.thucydides</groupId>
-            <artifactId>thucydides-core</artifactId>
-            <version>${thucydides.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>net.thucydides</groupId>
-            <artifactId>thucydides-junit</artifactId>
-            <version>${thucydides.version}</version>
-            <scope>test</scope>
-        </dependency>
     </dependencies>
 
     <build>
@@ -474,6 +459,11 @@
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>${version.jacoco}</version>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>${version.cobertura}</version>
+            </plugin>
         </plugins>
     </reporting>
 
@@ -547,6 +537,34 @@
                             <skip>false</skip>
                         </configuration>
                     </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+        <profile>
+            <!-- Unit tests with cobertura coverage data -->
+            <!-- Run with: mvn clean package cobertura:cobertura -Punit-cobertura-coverage -->
+            <id>unit-cobertura-coverage</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>cobertura-maven-plugin</artifactId>
+                        <version>${version.cobertura}</version>
+                        <configuration>
+                            <formats>
+                                <format>html</format>
+                                <format>xml</format>
+                            </formats>
+                        </configuration>
+                    </plugin>
+                    <!-- <plugin>
+                        <artifactId>maven-surefire-plugin</artifactId>
+                        <version>${version.surefire.plugin}</version>
+                        <configuration>
+                            <skip>false</skip>
+                        </configuration>
+                    </plugin> -->
                 </plugins>
             </build>
         </profile>
@@ -984,87 +1002,5 @@
                 </plugins>
             </build>
         </profile>
-
-        <!-- =============================== ATDD THUCYDIDES TESTS =============================== -->
-        <!-- <profile>
-            An optional ATDD testing profile that executes thucydides tests in your JBoss AS instance
-            This profile will start a new JBoss AS instance, and execute the test, shutting it down when done
-            Run with: mvn clean verify -Patdd-thucydides-managed
-            <id>atdd-thucydides</id>
-            <build>
-                <plugins>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-surefire-plugin</artifactId>
-                        <version>2.12</version>
-                        <configuration>
-                            <skip>true</skip>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <artifactId>maven-failsafe-plugin</artifactId>
-                        <version>2.12</version>
-                        <configuration>
-                            <includes>
-                                <include>**/*Test.java</include>
-                                <include>**/Test*.java</include>
-                                <include>**/When*.java</include>
-                            </includes>
-                            <argLine>-Xmx512m</argLine>
-                            <parallel>classes</parallel>
-                            <systemPropertyVariables>
-                                <webdriver.chrome.driver>/usr/bin/chromedriver</webdriver.chrome.driver>  
-                                <webdriver.driver>${webdriver.driver}</webdriver.driver>
-                            </systemPropertyVariables>
-                        </configuration>
-                        <executions>
-                            <execution>
-                                <goals>
-                                    <goal>integration-test</goal>
-                                    <goal>verify</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-compiler-plugin</artifactId>
-                        <version>2.3.2</version>
-                        <configuration>
-                            <source>1.5</source>
-                            <target>1.5</target>
-                        </configuration>
-                    </plugin>
-                    <plugin>
-                        <groupId>net.thucydides.maven.plugins</groupId>
-                        <artifactId>maven-thucydides-plugin</artifactId>
-                        <version>${thucydides.version}</version>
-                        <executions>
-                            <execution>
-                                <id>thucydides-reports</id>
-                                <phase>post-integration-test</phase>
-                                <goals>
-                                    <goal>aggregate</goal>
-                                </goals>
-                            </execution>
-                        </executions>
-                    </plugin>
-                    <plugin>
-                        <groupId>org.apache.maven.plugins</groupId>
-                        <artifactId>maven-site-plugin</artifactId>
-                        <version>3.0-beta-3</version>
-                        <configuration>
-                            <reportPlugins>
-                                <plugin>
-                                    <groupId>net.thucydides.maven.plugins</groupId>
-                                    <artifactId>maven-thucydides-plugin</artifactId>
-                                    <version>${thucydides.version}</version>
-                                </plugin>
-                            </reportPlugins>
-                        </configuration>
-                    </plugin>
-                </plugins>
-            </build>
-        </profile> -->
     </profiles>
 </project>
