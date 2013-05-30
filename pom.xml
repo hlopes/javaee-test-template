@@ -558,13 +558,13 @@
                             </formats>
                         </configuration>
                     </plugin>
-                    <!-- <plugin>
+                    <plugin>
                         <artifactId>maven-surefire-plugin</artifactId>
                         <version>${version.surefire.plugin}</version>
                         <configuration>
                             <skip>false</skip>
                         </configuration>
-                    </plugin> -->
+                    </plugin>
                 </plugins>
             </build>
         </profile>
