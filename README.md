@@ -17,7 +17,7 @@ This project use the following test frameworks/tools:
 * [Arquillian Drone](https://docs.jboss.org/author/display/ARQ/Drone)
 * [Arquillian Graphene 2](https://docs.jboss.org/author/display/ARQGRA2/Home)
 * 
-#### Coverage: 
+_Coverage_: 
 * [JaCoCo](http://www.eclemma.org/jacoco/)
 * [Cobertura](http://cobertura.sourceforge.net/)
 
