@@ -16,11 +16,13 @@ Java:
 * [Arquillian](http://arquillian.org/)
 * [Arquillian Drone](https://docs.jboss.org/author/display/ARQ/Drone)
 * [Arquillian Graphene 2](https://docs.jboss.org/author/display/ARQGRA2/Home)
+
 Java Coverage: 
 * [JaCoCo](http://www.eclemma.org/jacoco/)
 * [Cobertura](http://cobertura.sourceforge.net/)
 
-* Jasmine: 
+Javascript: 
 * [Jasmine](http://pivotal.github.io/jasmine/)
-* Jasmine Coverage: 
+
+Javascript Coverage: 
 * [Saga](http://timurstrekalov.github.io/saga/)
