@@ -24,5 +24,5 @@ _Coverage_:
 ### Javascript: 
 * [Jasmine](http://pivotal.github.io/jasmine/)
 
-####Coverage: 
+_Coverage_:
 * [Saga](http://timurstrekalov.github.io/saga/)
