@@ -11,7 +11,7 @@ For more information, please visit:
 
 This project use the following test frameworks/tools:
 
-h3. Java: 
+### Java: 
 * [JUnit](http://junit.org/)
 * [Arquillian](http://arquillian.org/)
 * [Arquillian Drone](https://docs.jboss.org/author/display/ARQ/Drone)
