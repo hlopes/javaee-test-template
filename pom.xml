@@ -47,6 +47,10 @@
         <version.jacoco>0.6.0.201210061924</version.jacoco>
         <version.cobertura>2.5.2</version.cobertura>
 
+        <!-- Jasmine Specs -->
+        <version.jasmine>1.3.1.2</version.jasmine>
+        <jasmine.testDir>src/main/webapp/resources/js/specs</jasmine.testDir>
+
         <jbossHome>${project.build.directory}/jboss-as-${version.jboss.maven.plugin}</jbossHome>
     </properties>
 
@@ -499,6 +503,43 @@
                         <version>${version.surefire.plugin}</version>
                         <configuration>
                             <skip>false</skip>
+                        </configuration>
+                    </plugin>
+                    <!-- Jasmine tests -->
+                    <plugin>
+                        <groupId>com.github.searls</groupId>
+                        <artifactId>jasmine-maven-plugin</artifactId>
+                        <version>${version.jasmine}</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>test</goal>
+                                </goals>
+                                <configuration>
+                                    <jsTestSrcDir>${jasmine.testDir}</jsTestSrcDir>
+                                    <keepServerAlive>true</keepServerAlive>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <!-- Jasmine tests coverage-->
+                    <plugin>
+                        <groupId>com.github.timurstrekalov</groupId>
+                        <artifactId>saga-maven-plugin</artifactId>
+                        <version>1.4.1</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>coverage</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <baseDir>http://localhost:${jasmine.serverPort}</baseDir>
+                            <outputDir>${project.build.directory}/coverage</outputDir>
+                            <noInstrumentPatterns>
+                                <pattern>.*/specs/.*</pattern> Don't instrument specs
+                            </noInstrumentPatterns>
                         </configuration>
                     </plugin>
                 </plugins>

@@ -21,12 +21,12 @@
     </container>
 
     <extension qualifier="webdriver">
-        <property name="browserCapabilities">${browser}</property>
+        <property name="browserCapabilities">chrome</property>
         <property name="remoteReusable">${remoteReusable}</property>
         <property name="remoteAddress">http://localhost:4444/wd/hub/</property>
         <property name="javascriptEnabled">true</property>
         <!-- ChromeDriver only -->
-        <property name="chromeDriverBinary">${chromeBinary}</property>
+        <property name="chromeDriverBinary">/usr/bin/chromedriver</property>
     </extension>
 
 </arquillian>
