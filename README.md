@@ -16,11 +16,11 @@ This project use the following test frameworks/tools:
 * [Arquillian](http://arquillian.org/)
 * [Arquillian Drone](https://docs.jboss.org/author/display/ARQ/Drone)
 * [Arquillian Graphene 2](https://docs.jboss.org/author/display/ARQGRA2/Home)
-* *Coverage*: 
+* Coverage: 
 ** [JaCoCo](http://www.eclemma.org/jacoco/)
 ** [Cobertura](http://cobertura.sourceforge.net/)
 
 ### Javascript: 
 * [Jasmine](http://pivotal.github.io/jasmine/)
-* *Coverage*: 
+* Coverage: 
 ** [Saga](http://timurstrekalov.github.io/saga/)
