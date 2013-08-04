@@ -21,7 +21,8 @@
     </container>
 
     <extension qualifier="webdriver">
-        <property name="browserCapabilities">chrome</property>
+        <property name="browserCapabilities">htmlunit</property>
+        <!-- <property name="browserCapabilities">chrome</property> -->
         <property name="remoteReusable">${remoteReusable}</property>
         <property name="remoteAddress">http://localhost:4444/wd/hub/</property>
         <property name="javascriptEnabled">true</property>
