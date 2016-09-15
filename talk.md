@@ -17,7 +17,7 @@ Speaker Bio
 
 ![Speaker Image](https://avatars0.githubusercontent.com/u/935431?v=3&s=400)
 
-Hugo is a full-stack web developer.
+Hugo is a Full-Stack Web Developer.
 He has more background in Java but nowadays he is focusing more on the Front-End Development.
 He is a Software Engineer at [Present Technologies](https://www.present-technologies.com), where he is responsible for developing and tests process implementation.
 
