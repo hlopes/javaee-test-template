@@ -1,4 +1,4 @@
-Automated UI Tests With WebdriverIO
+Automated Web UI Tests With WebdriverIO
 ==================================
 
 * Speaker   : Hugo Lopes
