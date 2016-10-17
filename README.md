@@ -22,7 +22,7 @@ _Coverage_:
 * [Cobertura](http://cobertura.sourceforge.net/)
 
 ### Javascript: 
-* [Jasmine](http://pivotal.github.io/jasmine/)
+* [Jasmine](https://jasmine.github.io/)
 
 _Coverage_:
 * [Saga](http://timurstrekalov.github.io/saga/)
